@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOR YOU MOSMI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="wish-contain">
+            <h1 class="wish">Happy Birthday to the most amazing person in my life! 🎉🎂 Every moment with you is a cherished memory, and I can't wait to create even more. May your day be as wonderful, bright, and joyful as you are! ❤️! 🎉🎂</h1>
+        </div>
+        
+    </div>
+    <div class="container">
+        <div class="wrapper">
+            <div class=" gallery">
+                <div id="slider-img-1">
+                    <img src="pic1.jpg" alt="Memory 1">
+                </div>
+                <div id="slider-img-2">
+                    <img src="pic2.jpg" alt="Memory 1">
+                </div>
+                <div id="slider-img-3">
+                    <img src="pic3.jpg" alt="Memory 1">
+                </div>
+                <div id="slider-img-4">
+                    <img src="pic4.jpg" alt="Memory 1">
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="txt">
+        <p class="voice"> One of the things I adore most about you is your voice—it's the sweetest sound in the world to me. Whether you're laughing, singing, or just saying my name, it always makes my heart melt🫠. Your voice carries so much warmth, love, and joy, and I could listen to it forever ♾. I hope today brings you as much happiness as you bring to me every day!</p>
+        <h3 style="font-weight: bold;">Click the button to listen the most beautiful voice in the world! Make Sure Volume Is Full 😉</h3>
+        <button class="btn" >Here Mosmi</button>
+        <button class="btn stop"  >Pause</button>
+    </div>
+    <script>
+        const btn = document.querySelector(".btn");
+        const stopBtn = document.querySelector(".stop");
+        const audio = new Audio("mosmi.mp3");
+        stopBtn.addEventListener("click", () => {
+            btn.style.display = "block";
+            stopBtn.style.display = "none";
+            audio.pause();
+        });
+        btn.addEventListener("click", () => {
+            stopBtn.style.display = "block";
+            btn.style.display = "none";
+            audio.play();
+        });
+        function createBalloons(num) {
+            for (let i = 0; i < num; i++) {
+                let balloon = document.createElement("img");
+                balloon.src = "ballon.png";
+                balloon.classList.add("balloon");
+                balloon.style.left = Math.random() * 100 + "vw";
+                balloon.style.animationDuration = (Math.random() * 3 + 2) + "s";
+                document.body.appendChild(balloon);
+                setTimeout(() => balloon.remove(), 5000);
+            }
+        }
+        setInterval(() => createBalloons(5), 1000);
+    </script>
+</body>
+</html>
